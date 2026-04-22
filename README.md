@@ -58,30 +58,3 @@ A hand-labeled image set of ~500 photos sourced from Creative Commons and consen
 | Evaluation | `scikit-learn`, `sacrebleu`, custom factuality checks |
 | Demo | `gradio` on Hugging Face Spaces |
 | On-device (optional) | `coremltools`, MLX, SwiftUI |
-
----
-
-## Project structure
- 
-```
-raices/
-├── data/
-│   ├── taxonomy.json          # motif definitions + prompts
-│   ├── eval_set/              # labeled evaluation images
-│   └── annotations.csv        # multi-label ground truth
-├── src/
-│   ├── detection.py           # CLIP motif detection
-│   ├── scene.py               # DINOv2 scene features
-│   ├── tone.py                # emotional tone classification
-│   ├── narrative.py           # Llama-3 narrative generation
-│   └── pipeline.py            # end-to-end
-├── evals/
-│   ├── run_eval.py            # reproducible benchmark runner
-│   ├── calibration.ipynb      # confidence calibration analysis
-│   └── results/               # versioned run outputs
-├── app/
-│   └── gradio_demo.py         # web demo
-├── ios/                       # optional Core ML prototype
-├── ROADMAP.md
-└── README.md
-```
