@@ -1,0 +1,18 @@
+# vision embeddings
+open_clip_torch
+transformers
+
+# language model
+accelerate
+
+# data
+pandas
+datasets
+Pillow
+
+# evaluation
+scikit-learn
+sacrebleu
+
+# demo
+gradio
