@@ -1,0 +1,77 @@
+{
+  "_README": "Mapping from motif_id (matching taxonomy.py) to a list of Wikimedia Commons categories. The script searches each listed category for files. Verify each category exists at https://commons.wikimedia.org/wiki/Category:<NAME> before running. Some entries are best-guess and may need adjustment.",
+
+  "papel_picado": ["Papel picado"],
+  "ofrenda": ["Day of the Dead altars"],
+  "cempasuchil": ["Tagetes erecta"],
+  "calavera_sugar": ["Sugar skulls"],
+  "catrina": ["La Calavera Catrina"],
+  "huipil": ["Huipiles"],
+  "reboso": ["Rebozos"],
+  "talavera": ["Talavera de Puebla"],
+  "alebrijes": ["Alebrijes"],
+  "lucha_libre_mask": ["Lucha libre masks"],
+  "mariachi_outfit": ["Mariachi", "Charro suits"],
+  "tortilla_making": ["Making tortillas"],
+  "mole": ["Mole (sauce)"],
+  "tamales": ["Tamales"],
+  "pozole": ["Pozole"],
+  "cenote": ["Cenotes"],
+  "molcajete": ["Molcajetes"],
+
+  "traje_indigena_guatemalteco": ["Traditional clothing of Guatemala", "Maya textiles"],
+  "quetzal": ["Pharomachrus mocinno"],
+  "chichicastenango_market": ["Chichicastenango"],
+  "jade_maya": ["Maya jade"],
+
+  "poncho_andino": ["Andean ponchos", "Ponchos of Peru"],
+  "chullo": ["Chullos"],
+  "machu_picchu": ["Machu Picchu"],
+  "llama": ["Lama glama"],
+  "alpaca_wool": ["Alpaca wool", "Andean textiles"],
+  "ceviche": ["Ceviche"],
+  "inca_sun_symbol": ["Inti", "Inca art"],
+  "quipu": ["Quipus"],
+  "caballito_de_totora": ["Caballitos de totora"],
+
+  "mochila_wayuu": ["Wayuu people", "Mochila bags"],
+  "sombrero_vueltiao": ["Sombrero vueltiao"],
+  "cumbia_dance": ["Cumbia"],
+  "arepas": ["Arepas"],
+  "ciudad_perdida": ["Ciudad Perdida"],
+
+  "son_cubano": ["Son cubano"],
+  "habana_vieja_architecture": ["Old Havana"],
+  "guayabera": ["Guayaberas"],
+  "mojito": ["Mojitos"],
+
+  "mate_gourd": ["Mate (infusion)", "Mate gourds"],
+  "tango_dance": ["Tango"],
+  "asado": ["Asados"],
+  "gaucho_attire": ["Gauchos"],
+  "empanadas": ["Empanadas"],
+  "yerba_mate_ritual": ["Mate (infusion)"],
+
+  "capoeira": ["Capoeira"],
+  "carnival_costume": ["Brazilian carnival costumes"],
+  "berimbau": ["Berimbaus"],
+  "feijoada": ["Feijoada"],
+  "candomble_ceremony": ["Candomblé"],
+  "favela_mural": ["Favelas in Rio de Janeiro", "Street art in Rio de Janeiro"],
+
+  "mapuche_kultrun": ["Kultrun"],
+  "cueca_dance": ["Cueca"],
+
+  "cholita_dress": ["Cholas (women)", "Aymara women"],
+  "tinku_ritual": ["Tinku"],
+  "salt_flat_salar": ["Salar de Uyuni"],
+
+  "vejigante_mask": ["Vejigantes"],
+  "salsa_dance_pr": ["Salsa (dance)"],
+  "cuatro_instrument": ["Puerto Rican cuatros"],
+
+  "pan_flute_siku": ["Sikus"],
+  "aguayo_textile": ["Aguayos"],
+  "coca_leaf_ritual": ["Coca leaves"],
+  "pachamama_offering": ["Pachamama"]
+}
