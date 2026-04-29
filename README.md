@@ -10,11 +10,11 @@
 
 Foundation vision-language models are trained on internet-scale corpora that are demonstrably skewed toward Western, English-speaking contexts. This project asks a concrete question:
 
-> **How reliably can off-the-shelf multimodal embeddings identify culturally-specific visual motifs — and what does the error distribution look like across cultures, categories, and image conditions?**
+> **How reliably can off-the-shelf multimodal embeddings identify culturally-specific visual motifs, and what does the error distribution look like across cultures, categories, and image conditions?**
 
 Most evaluation benchmarks for CLIP and similar models measure performance on ImageNet-style object recognition. Very few measure performance on culturally-situated concepts (e.g., *papel picado*, *ofrenda*, *huipil*, *mate gourd*) where a model's training-data coverage directly shapes whose heritage it can "see." Raíces treats this as a measurement problem first and a product second.
 
-The applied layer — generating multilingual heritage narratives from detected motifs — is the vehicle for surfacing model behavior to a non-technical audience. The underlying contribution is the dataset, taxonomy, and evaluation framework.
+The applied layer (generating multilingual heritage narratives from detected motifs) is the vehicle for surfacing model behavior to a non-technical audience. The underlying contribution is the dataset, taxonomy, and evaluation framework.
 
 ---
 
@@ -31,7 +31,7 @@ The applied layer — generating multilingual heritage narratives from detected 
 ## Approach
 
 ### 1. Taxonomy construction
-A hand-curated taxonomy of cultural motifs organized by tradition, category (object / setting / food / clothing / activity), and sub-culture. Each motif has 2–3 prompt variants for robustness testing. Scope for v1: Latin American heritage (~70 motifs); scope grows with community contribution.
+A hand-curated taxonomy of cultural motifs organized by tradition, category (object / setting / food / clothing / activity), and sub-culture. Each motif has 2 to 3 prompt variants for robustness testing. Scope for v1: Latin American heritage (63 motifs across 11 traditions).
 
 ### 2. Evaluation dataset
 A hand-labeled image set of ~500 photos sourced from Creative Commons and consented personal submissions, with multi-label motif annotations, scene labels, and emotional-tone labels. Each photo has provenance metadata (source, cultural context note from contributor).
@@ -48,6 +48,40 @@ A hand-labeled image set of ~500 photos sourced from Creative Commons and consen
 
 ---
 
+## Taxonomy v1 composition
+
+63 motifs, 189 prompt variants, 11 traditions.
+
+**By tradition:**
+
+| Tradition             | Motifs |
+|-----------------------|-------:|
+| Mexican               |     17 |
+| Peruvian              |      9 |
+| Argentine             |      6 |
+| Brazilian             |      6 |
+| Colombian             |      5 |
+| Guatemalan            |      4 |
+| Cuban                 |      4 |
+| Andean (pan-regional) |      4 |
+| Bolivian              |      3 |
+| Puerto Rican          |      3 |
+| Chilean               |      2 |
+
+**By category:**
+
+| Category | Motifs |
+|----------|-------:|
+| Object   |     23 |
+| Activity |     13 |
+| Clothing |     11 |
+| Setting  |      8 |
+| Food     |      8 |
+
+The distribution is intentionally uneven and reflects the long tail of personal familiarity and source-material availability. Mexican coverage is deepest; several traditions are sparse. **Per-culture macro-F1 (rather than micro-F1) is the headline metric** so this imbalance does not get hidden in the average.
+
+---
+
 ## Tech stack
 
 | Layer | Tool |
@@ -58,3 +92,21 @@ A hand-labeled image set of ~500 photos sourced from Creative Commons and consen
 | Evaluation | `scikit-learn`, `sacrebleu`, custom factuality checks |
 | Demo | `gradio` on Hugging Face Spaces |
 | On-device (optional) | `coremltools`, MLX, SwiftUI |
+
+---
+
+## Scope, honestly
+
+v1 covers **Latin American heritage only**, with deepest coverage of Mexican motifs and thin coverage of several other traditions (see composition table). No claim is made about "global cultural understanding." That claim would require an order-of-magnitude larger taxonomy and meaningful contribution from each represented community.
+
+The taxonomy is treated as a political artifact, not a neutral list. What it includes and excludes shapes whose heritage the system can recognize. Expansion happens through community review, not through me adding motifs from Wikipedia.
+
+---
+
+## Ethical considerations
+
+- **Representation, not identification.** The system reports motifs as *observations about an image*, never as identity claims about people in the image. A detected huipil indicates "a huipil is visible," not "this person is Indigenous Mexican."
+- **Anti-stereotyping in narratives.** The narrative prompt forbids invention of cultural backstory beyond detected motifs, and factuality evaluation explicitly measures adherence to this constraint.
+- **Consent for personal photos.** All photos used in development and any public demo require explicit consent from the people pictured. Public examples use Creative Commons or self-provided imagery.
+- **Privacy via on-device inference.** The Core ML variant exists so family photos never leave the device, a product claim backed by architecture, not marketing.
+- **Sensitive practices (e.g., coca leaf rituals).** Some motifs involve practices that have been mischaracterized in non-source-community contexts. Annotation guidance and prompts emphasize ceremonial framing; reviewers from source communities are the final arbiters.
