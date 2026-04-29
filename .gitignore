@@ -1,0 +1,56 @@
+# ── Python ───────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── Virtual environments ─────────────────────────────
+venv/
+.venv/
+env/
+.env
+
+# ── Jupyter ──────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── Project: eval data ───────────────────────────────
+# Downloaded images are large and reproducible from candidates.csv.
+# Keep the manifest and labels in version control; ignore the binaries.
+data/eval_set/images/
+data/eval_set/*.tmp
+
+# ── Project: model artifacts ─────────────────────────
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.gguf
+*.mlmodel
+*.mlpackage/
+models/
+
+# ── Project: experiment outputs ──────────────────────
+evals/results/runs/
+*.log
+
+# ── OS / editor cruft ────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Secrets ──────────────────────────────────────────
+.env.local
+*.key
+secrets.*
