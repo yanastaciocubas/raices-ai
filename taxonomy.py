@@ -154,7 +154,7 @@ MOTIFS: List[Motif] = [
     ),
 
     Motif(
-        id="reboso",
+        id="rebozo",
         name="Rebozo",
         native_term="rebozo",
         tradition="Mexican",
