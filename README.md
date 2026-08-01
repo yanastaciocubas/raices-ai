@@ -16,6 +16,8 @@ Most evaluation benchmarks for CLIP and similar models measure performance on Im
 
 The applied layer (generating multilingual heritage narratives from detected motifs) is the vehicle for surfacing model behavior to a non-technical audience. The underlying contribution is the dataset, taxonomy, and evaluation framework.
 
+**Status: actively in development.**
+
 ---
 
 ## Research questions
